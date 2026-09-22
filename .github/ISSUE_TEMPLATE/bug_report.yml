@@ -1,0 +1,83 @@
+name: Bug report
+description: Report a reproducible DesktopElegans problem
+title: "[Bug]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Window geometry and monitor details are especially useful for DesktopElegans.
+
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: "Windows 10 22H2 / Windows 11 24H2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: monitors
+    attributes:
+      label: Monitor layout and scaling
+      description: Include resolution, relative placement and DPI/scaling if known.
+      placeholder: "Primary 1920x1080 at 100%; second 1920x1080 to the left at 100%"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Affected surface
+      options:
+        - Windows desktop
+        - File Explorer
+        - Chrome
+        - Another application
+        - Multi-monitor transition
+        - Input passthrough
+        - c302 / neural simulation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Launch DesktopElegans
+        2. Open ...
+        3. Move/minimise/restore ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: Paste console output or a short log excerpt. Remove personal information first.
+      render: shell
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Scope check
+      options:
+        - label: This report concerns the local DesktopElegans simulation and does not request malware/self-propagation behaviour.
+          required: true
