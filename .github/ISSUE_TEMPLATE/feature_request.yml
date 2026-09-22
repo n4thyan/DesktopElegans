@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest an improvement to the local desktop-organism simulation
+title: "[Feature]: "
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the user-visible limitation or opportunity.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: Describe the feature from the user's perspective.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Biology / c302
+        - Body mechanics
+        - Desktop rendering
+        - Window habitats
+        - Multi-monitor
+        - Performance
+        - Packaging / setup
+        - Debugging / diagnostics
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Project boundary
+      options:
+        - label: This feature stays within the local desktop simulation and does not add autonomous propagation, injection, privilege escalation or persistence.
+          required: true
