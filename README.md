@@ -9,7 +9,7 @@
 <img alt="Core milestone complete" src="https://img.shields.io/badge/status-core%20milestone%20complete-2ea44f?style=for-the-badge">
 <img alt="49/49 tests passing" src="https://img.shields.io/badge/tests-49%2F49%20passing-2ea44f?style=for-the-badge">
 <img alt="c302 / OpenWorm" src="https://img.shields.io/badge/biology-c302%20%2F%20OpenWorm-8A2BE2?style=for-the-badge">
-<img alt="Multi monitor" src="https://img.shields.io/badge/multi--monitor-supported-ff8c00?style=for-the-badge">
+<img alt="Multi monitor" src="https://img.shields.io/badge/multi--monitor-supported-ff8c00?style=for-the-badge">\n<img alt="MIT License" src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge">
 
 **DesktopElegans turns the Windows desktop into the organism's habitat.**  
 Worms can inhabit the desktop and ordinary application windows, preserve identity as windows move or disappear, span multiple monitors, and remain click-through so the computer stays usable underneath them.
