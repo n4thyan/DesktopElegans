@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
+.python310/
 .venv/
 venv/
 env/
@@ -22,15 +23,14 @@ dist/
 .coverage.*
 htmlcov/
 
-# Local runtime artifacts
-.runtime/tools/
-.runtime/*.png
-.runtime/live-smoke/
-.runtime/result.json
-.runtime/*-result.json
+# Local runtime artifacts (retain root-level smoke-test scripts only)
+.runtime/*
+!.runtime/*.py
+vendor/
 logs/
 *.log
 worm-state.json
+NUL
 
 # Editors
 .vscode/

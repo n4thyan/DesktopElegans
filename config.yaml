@@ -1,0 +1,155 @@
+brain:
+  parameter_set: A
+  duration_ms: 150
+  dt_ms: 0.05
+  simulator: jNeuroML
+  work_dir: .runtime/c302
+  # Minimum wall-clock spacing between submissions for each worm.  c302 runs
+  # on one background worker; rendering remains responsive while it computes.
+  interval_sec: 0.5
+  # Allow an in-flight jNeuroML epoch to finish during a clean shutdown.
+  shutdown_timeout_sec: 120
+  result_cache_size: 4096
+
+  # raw = decode the c302 output directly.
+  # baseline_delta = compare each run with an unstimulated cached baseline.
+  decision_mode: raw
+  baseline_gain: 2.0
+
+  sensory:
+    threshold: 0.20
+    quantum: 0.10
+    hunger_gain: 0.35
+    stress_gain: 0.45
+    # Small physical curvature values are amplified before thresholding so body
+    # feedback reaches DVA on ordinary movement rather than only at extremes.
+    proprioception_gain: 20.0
+
+  stimulus:
+    min_pa: 1.5
+    max_pa: 5.0
+    delay_ms: 10
+    # null = automatically fill the simulation after delay with a 5 ms tail.
+    duration_ms: null
+
+organism:
+  initial_energy: 0.65
+  # Ecology food is the energy source; abstract habitat no longer grants energy.
+  rest_gain: 0.0
+  explore_cost: 0.01
+  migrate_cost: 0.02
+  retreat_cost: 0.015
+  rich_habitat_bonus: 0.0
+  stress_gain_blocked: 0.18
+  stress_recovery: 0.05
+  stress_energy_penalty: 0.005
+  resource_intake_gain: 0.0
+
+desktop:
+  initial_worms: 1
+  body_length_mm: 1.0
+  render_fps: 60
+  region_tile_px: 200
+  workspace_factor: 0.85
+
+# Render-only diagnostics. Disabled means the physical ~1 mm display scale and
+# no coordinate/sensory text. Scale never changes mechanics or collision ranges.
+visual_debug:
+  enabled: false
+  scale: 20
+  show_coordinates: true
+  show_sensory_state: false
+
+ecology:
+  enabled: true
+  arcade_growth: false
+  max_visual_growth: 2.0
+  predation_enabled: false
+  predation_size_ratio: 1.75
+  basal_energy_use_per_sec: 0.002
+  energy_capacity: 2.0
+  mass_gain_fraction: 0.25
+
+resources:
+  max_count: 24
+  initial_count: 16
+  regeneration_interval_sec: 15.0
+  nutrition_min: 0.10
+  nutrition_max: 0.20
+  radius_px: 2.0
+  sensory_radius_px: 120.0
+
+# Hard colony bounds apply even when persistence/process options are disabled.
+replication:
+  max_living_worms: 12
+  max_generations: 3
+  process_enabled: false
+  max_child_processes: 2
+  sandbox_enabled: false
+  sandbox_root: ~/Desktop/WormHabitat
+  max_sandbox_disk_mb: 16
+  max_per_worm_state_kb: 64
+  per_worm_state_directories: true
+  cleanup_timeout_sec: 5.0
+
+reproduction:
+  enabled: true
+  max_worms: 12
+  min_energy: 0.90
+  offspring_energy: 0.22
+  parent_energy_cost: 0.30
+  cooldown_brain_ticks: 20
+  separation_px: 16.0
+
+# Flexible segmented-body model driven by named c302 locomotor motor neurons.
+physics:
+  segments: 13
+  stiffness: 0.72
+  damping: 0.82
+  muscle_gain: 1.8
+  propulsion_gain: 2.8
+  substeps: 4
+
+# Explicitly opt-in, local-only process transport for offspring snapshots.
+# Children cannot discover peers, bind sockets, self-copy, or spawn descendants.
+transport:
+  process_enabled: false
+  max_children: 2
+  max_generation: 1
+  startup_timeout_sec: 5.0
+  shutdown_timeout_sec: 3.0
+
+# Purely abstract in-memory habitat. These are not hosts or IP addresses.
+habitat:
+  dynamic_novelty: true
+  nodes:
+    alpha:
+      cpu_free: 0.80
+      memory_free: 0.75
+      network_quality: 0.90
+      peer_signal: 0.80
+      novelty: 0.20
+      blocked: false
+      neighbors: [beta]
+    beta:
+      cpu_free: 0.55
+      memory_free: 0.60
+      network_quality: 0.75
+      peer_signal: 0.70
+      novelty: 0.80
+      blocked: false
+      neighbors: [alpha, gamma]
+    gamma:
+      cpu_free: 0.20
+      memory_free: 0.25
+      network_quality: 0.15
+      peer_signal: 0.20
+      novelty: 0.50
+      blocked: true
+      neighbors: [beta]
+
+logging:
+  path: logs/worm.jsonl
+
+state:
+  path: .runtime/worm-state.json

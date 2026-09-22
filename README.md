@@ -4,12 +4,18 @@
 
 ### A biologically inspired *C. elegans* that lives across your Windows desktop.
 
-<img alt="Windows" src="https://img.shields.io/badge/platform-Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white">
-<img alt="Python 3.10" src="https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python&logoColor=white">
-<img alt="Core milestone complete" src="https://img.shields.io/badge/status-core%20milestone%20complete-2ea44f?style=for-the-badge">
-<img alt="49/49 tests passing" src="https://img.shields.io/badge/tests-49%2F49%20passing-2ea44f?style=for-the-badge">
-<img alt="c302 / OpenWorm" src="https://img.shields.io/badge/biology-c302%20%2F%20OpenWorm-8A2BE2?style=for-the-badge">
-<img alt="Multi monitor" src="https://img.shields.io/badge/multi--monitor-supported-ff8c00?style=for-the-badge">\n<img alt="MIT License" src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge">
+<p align="center">
+  <img alt="Windows" src="https://img.shields.io/badge/platform-Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white">
+  <img alt="Python 3.10" src="https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img alt="Status" src="https://img.shields.io/badge/status-core%20milestone%20complete-2ea44f?style=for-the-badge">
+  <img alt="Tests" src="https://img.shields.io/badge/tests-49%2F49%20passing-2ea44f?style=for-the-badge">
+</p>
+
+<p align="center">
+  <img alt="Biology" src="https://img.shields.io/badge/biology-c302%20%2F%20OpenWorm-8A2BE2?style=for-the-badge">
+  <img alt="Multi-monitor" src="https://img.shields.io/badge/multi--monitor-supported-ff8c00?style=for-the-badge">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-f0c419?style=for-the-badge">
+</p>
 
 **DesktopElegans turns the Windows desktop into the organism's habitat.**  
 Worms can inhabit the desktop and ordinary application windows, preserve identity as windows move or disappear, span multiple monitors, and remain click-through so the computer stays usable underneath them.
@@ -22,23 +28,25 @@ Worms can inhabit the desktop and ordinary application windows, preserve identit
 
 Most desktop pets are sprites rendered in one always-on-top layer. DesktopElegans instead treats the operating system itself as an environment.
 
-| Capability | Status |
-|---|---|
-| Real desktop habitat | 🟢 Verified |
-| Generic Win32 window habitats | 🟢 Verified |
-| File Explorer support | 🟢 Verified |
-| Chrome support | 🟢 Verified |
-| Multi-monitor / negative-coordinate layouts | 🟢 Verified |
-| Window move / resize tracking | 🟢 Verified |
-| Minimise / restore lifecycle | 🟢 Verified |
-| Host-close fallback to desktop | 🟢 Verified |
-| Foreground-window occlusion | 🟢 Verified |
-| Click-through / no-focus-steal rendering | 🟢 Verified |
-| Persistent worm identity across hosts | 🟢 Verified |
-| Multiple simultaneous worms | 🟢 Verified |
-| c302 / jNeuroML-driven post-epoch wriggling | 🟢 Verified |
-| Approx. 1 mm production rendering | 🟢 Verified |
-| One-click packaged Windows release | 🟡 Planned |
+### Verified capabilities
+
+| Area | Capability | Status |
+|---|---|---|
+| Habitat | Real desktop habitat | ✅ Verified |
+| Habitat | Generic Win32 window habitats | ✅ Verified |
+| Applications | File Explorer support | ✅ Verified |
+| Applications | Chrome support | ✅ Verified |
+| Displays | Multi-monitor / negative-coordinate layouts | ✅ Verified |
+| Window lifecycle | Window move / resize tracking | ✅ Verified |
+| Window lifecycle | Minimise / restore lifecycle | ✅ Verified |
+| Window lifecycle | Host-close fallback to desktop | ✅ Verified |
+| Rendering | Foreground-window occlusion | ✅ Verified |
+| Rendering | Click-through / no-focus-steal rendering | ✅ Verified |
+| Identity | Persistent worm identity across hosts | ✅ Verified |
+| Population | Multiple simultaneous worms | ✅ Verified |
+| Biology | c302 / jNeuroML-driven post-epoch wriggling | ✅ Verified |
+| Scale | Approx. 1 mm production rendering | ✅ Verified |
+| Packaging | One-click packaged Windows release | 🟡 Planned |
 
 ---
 

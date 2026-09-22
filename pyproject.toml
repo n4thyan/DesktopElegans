@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nematode-wormmind-desktop"
+version = "0.6.0"
+description = "Local Windows desktop organism driven by the OpenWorm c302 model"
+requires-python = ">=3.10,<3.11"
+dependencies = ["PyYAML>=6.0"]
+
+[project.scripts]
+nematode-mind = "nematode_mind.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
